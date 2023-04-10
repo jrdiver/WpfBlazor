@@ -1,14 +1,21 @@
 @namespace DestopApp.BlazorPages
+@inject NavigationManager NavigationManager
 @page "/Counter"
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<a href="/Counter2"> Go To 2</a>
+
+<button @onclick="NavigateToAnotherPage">Go to Another Page</button>
 
 @code {
     private int currentCount = 0;
 
     private void IncrementCount() => currentCount++;
+
+    void NavigateToAnotherPage()
+    {
+        NavigationManager.NavigateTo("Counter2");
+    }
 }

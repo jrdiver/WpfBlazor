@@ -1,16 +1,15 @@
-﻿using System.Windows;
-using Microsoft.AspNetCore.Components.WebView;
+﻿using Microsoft.AspNetCore.Components.WebView;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DestopApp;
 
-/// <summary> Interaction logic for MainWindow.xaml/// </summary>
+/// <summary> Interaction logic for MainWindow.xaml </summary>
 public partial class MainWindow
 {
     public MainWindow()
     {
         InitializeComponent();
-        var serviceCollection = new ServiceCollection();
+        ServiceCollection serviceCollection = new();
         serviceCollection.AddWpfBlazorWebView();
         Resources.Add("services", serviceCollection.BuildServiceProvider());
     }
@@ -19,5 +18,5 @@ public partial class MainWindow
     {
         if (urlLoadingEventArgs.Url.Host != "0.0.0.0")
             urlLoadingEventArgs.UrlLoadingStrategy = UrlLoadingStrategy.OpenInWebView;
-    } 
+    }
 }
