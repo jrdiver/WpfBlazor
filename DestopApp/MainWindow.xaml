@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
-        xmlns:local="clr-namespace:DestopApp.BlazorPages"
+        xmlns:local="clr-namespace:DestopApp.Pages"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -19,7 +19,7 @@
             <TabItem x:Name="TabPanelList2" Header="Panel List2">
                 <blazor:BlazorWebView HostPage="wwwroot\index.html" Services="{DynamicResource services}" UrlLoading="Handle_UrlLoading">
                     <blazor:BlazorWebView.RootComponents>
-                        <blazor:RootComponent Selector="#app" ComponentType="{x:Type local:Counter2}" />
+                        <blazor:RootComponent Selector="#app" ComponentType="{x:Type local:FetchData}" />
                     </blazor:BlazorWebView.RootComponents>
                 </blazor:BlazorWebView>
             </TabItem>

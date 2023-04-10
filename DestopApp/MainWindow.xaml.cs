@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.WebView;
+﻿using DestopApp.Data;
+using Microsoft.AspNetCore.Components.WebView;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DestopApp;
@@ -11,6 +12,10 @@ public partial class MainWindow
         InitializeComponent();
         ServiceCollection serviceCollection = new();
         serviceCollection.AddWpfBlazorWebView();
+        serviceCollection.AddSingleton<WeatherForecastService>();
+#if DEBUG
+        serviceCollection.AddBlazorWebViewDeveloperTools();
+#endif
         Resources.Add("services", serviceCollection.BuildServiceProvider());
     }
 
