@@ -2,6 +2,9 @@
     background-color: palegreen;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+main{
+    margin-top:70px;
+}
 
 h1:focus {
     outline: none;
