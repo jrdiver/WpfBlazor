@@ -1,6 +1,6 @@
 @namespace DestopApp.BlazorPages
 @inject NavigationManager NavigationManager
-@page "/Counter"
+@page "/CounterSingle"
 <h1>Counter</h1>
 
 <p>Current count: @currentCount</p>
@@ -8,6 +8,11 @@
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 <button @onclick="NavigateToAnotherPage">Go to Another Page</button>
+
+<a href="Counter2">
+    <span class="oi oi-plus" aria-hidden="true"></span> Counter2
+</a>
+
 
 @code {
     private int currentCount = 0;
